@@ -1,0 +1,67 @@
+<style>
+.container.Main-hover-fuction52:hover .back-img52 {
+    z-index: 9;
+    position: relative;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+.container.Main-hover-fuction52-2:hover .back-img52-2 {
+    z-index: 9;
+    position: relative;
+    -webkit-transition: opacity 0.2s ease-in-out;
+    -moz-transition: opacity 0.2s ease-in-out;
+    -o-transition: opacity 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out;
+    opacity: 1;
+}
+img.back-img52, .back-img52-2 {
+    opacity: 0.5;
+}
+a.summary-title-link {font-family: Prata;}
+
+
+
+/* Parallax Animation */
+
+
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+
+<script>
+$(function(){
+  $(window).scroll(function(){
+    var winTop2 = $(window).scrollTop();
+    if(winTop2 >= 9000){
+      $('.RiGHT-moveing').addClass("stickly52right");
+    }else{
+      //$('.LeFT-moveing').removeClass("stickly52");
+    }//if-else
+  });//win func.
+});//ready func.
+</script>
+
+
+
+<style>
+h1.RiGHT-moveing {
+    visibility: hidden;
+}
+  h1.RiGHT-moveing.stickly52right {
+    visibility: visible;
+}
+</style>
