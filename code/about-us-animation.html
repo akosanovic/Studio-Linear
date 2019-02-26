@@ -1,56 +1,120 @@
-<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+	<!-- AOS Animation library -->
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	<style >
+		[data-aos=fade-left] {
+			transform: translate3d(1000px,0,0);
+		}
+		.mobile-image {
+			display: none;
+		}
+		@media screen and (max-width: 640px){
+			.mobile-image {
+				display: block;
+			}
+			.aos-image,
+			.parallax-image {
+				display: none;
+			}
+		}
+		.aos-image_container {
+			position: relative;
+		}
+		.aos-image img, 
+		.parallax-image img{
+			display: block;
+			height: auto;
+			width: 100%;
+		}
+		.aos-image.static-image {
+			position: relative;
+			z-index:2;
+		}
+		.background{
+			position: absolute;
+			z-index: 1;
+			top    : 0;
+			bottom : 0;
+		}
+		/* fullwidth image */
+		.background img {
+			max-width: unset;
+			width: 150%;
+			position: relative;
+			left: -20%;
+			right: -20%;
+		}
+		.buildings {
+			position: absolute;
+			z-index: 2;
+			left  : 0;
+			top   : 0;
+			bottom: 0;
+		}
+		.brantches {
+			position: absolute;
+			z-index: 2;
+			right:   0;
+			top: 0;
+		}
+	</style>
 
-<style>
-  .Main-content {
-    padding-left: 0;
-    padding-right: 0;
-  }
-</style>
+
+	<div class="aos-image_container">
+		<div class="aos-image static-image">
+			<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74c40dee6eb07a7f46962e/1551156768562/center-image.png?format=1500w" alt="">
+		</div>
+
+		<div data-aos="fade-left" class="aos-image background" data-aos-offset="500">
+			<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74cd14971a1874e8104da3/1551158553758/background.png?format=1500w" alt="">
+		</div>
+		
+		<div class="paralla-image parallax--img buildings">
+			<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74c4014e17b619cc5ba67c/1551156880223/buildings.png?format=1500w" alt="">
+		</div>
+
+		<div class="paralla-image parallax--img brantches">
+			<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74cb7c71c10ba578a8485e/1551158157827/branch.png?format=1500w" alt="">
+		</div>
+
+		<div class="mobile-image">
+			<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74cee44192029977b7be57/1551159032504/mobile-image.jpeg?format=1500w" alt="">
+		</div>
+		
+	</div>
+
+
+
+
+
+
 
 <script>
-  $( document ).ready(function() {
-	images = $('.Main-content .sqs-block-image');
-   	collage = images[0];
-    building = images[1];
-	background = images[2];
-    
-    $(collage).css({
-    	'position': 'relative',
-      	'z-index': '2'
-    })
-    $(building).css({
-    	'position' : 'absolute',
-      	'z-index'  : '3',
-      	'width' : '100%',
-      	'height': '100vh',
-      	"top" : '0',
-      	'left': '0', 
-      	'bottom': '0'
-    });
-    $(background).css({
-    	'position' : 'absolute',
-      	'z-index'  : '1',
-      	'width' : '100%',
-        'height' : '100vh',
-      	"top" : '0',
-      	'right': '0', 
-      	'bottom': '0'
-    })
-    
-  	
-    console.log('images', images);
-    building.dataset.aos = "fade-up";
-    building.dataset.aosAnchorPlacement="bottom-bottom";
-  
-   	background.dataset.aos = 'slide-left';
-	background.dataset.aosAnchorPlacement="center-center";
-    
-     
-  AOS.init({
-  	startEvent: 'load',
-    duration: 1000,
-  });
 
+	$(document).ready(function() {
+		// event binding
+		$(window).on('scroll', parallaxHandler.bind(this));
+	
+	
+		function parallaxHandler(e) {
+			
+			var scrollTop = $(window).scrollTop();
+			var parallaxImgs = $('.parallax--img');
 
-  });
+			for(var i = 0; i < parallaxImgs.length; i++ ) {
+				var parallaxImg = $(parallaxImgs[i])
+				offsetTop = parallaxImg.offset().top;
+
+				if(scrollTop > offsetTop) {
+					shiftDistance = Math.round(scrollTop - offsetTop)*0.3 *(i + 1);
+					parallaxImg.css('transform', 'translateY('+shiftDistance+'px)');
+				}
+			}
+		}
+
+		AOS.init({
+			duration: 1500, 
+			once: false
+		});
+	})
+		
 </script>
