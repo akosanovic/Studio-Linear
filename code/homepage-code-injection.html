@@ -1,4 +1,5 @@
 <style>
+  /* Work Section */
   .slide.sqs-gallery-design-grid-slide {
       position: relative;
   }
@@ -50,83 +51,23 @@
   img.back-img52, .back-img52-2 {
       opacity: 0.5;
   }
-  a.summary-title-link {font-family: Prata
-    
-    .Main-content .col > .image-block:nth-child(2){
-      border: 1px solid red;
+  a.summary-title-link {font-family: Prata;}
+
+
+/* ============= About Us =================*/
+  
+  /* mobile image: remove paddings and margins */
+  @media screen and (max-width: 640px) {
+    #block-yui_3_17_2_1_1550702397905_98990 {
+      padding-left: 0;
+      padding-right: 0;
     }
-  </style>
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-  <!-- 
-  <script>
-  $(function(){
-    $(window).scroll(function(){
-      var winTop2 = $(window).scrollTop();
-      if(winTop2 >= 5500){
-        $('.RiGHT-moveing').addClass("stickly52right");
-      }else{
-        //$('.LeFT-moveing').removeClass("stickly52");
-      }//if-else
-    });//win func.
-  });//ready func.
-  </script>
-  -->
-  
-  
-  <style>
-  .RiGHT-moveing {
-      visibility: hidden;
+    /* Hide space below image */
+    #block-yui_3_17_2_1_1551269076643_31428, 
+    #block-yui_3_17_2_1_1551199045885_40402 {
+      display: none;
+    }
   }
-    .RiGHT-moveing.stickly52right {
-      visibility: visible;
-  }
-    
-    
-  .stickly52right {
-    transition: width 1s;
-    border-radius: 4px 0px 0px 4px;
-  }  
-   .stickly52right {
-        /* for chrome and safari*/
-        -webkit-animation-duration: 1s;
-        -webkit-animation-name: slidein;
-        /*for firefox*/
-        -moz-animation-duration: 1s;
-        -moz-animation-name: slidein;
-          /* for opera*/
-        -o-animation-duration: 1s;
-        -o-animation-name: slidein;
-          /* Standard syntax*/
-        animation-duration: 1s;
-        animation-name: slidein;
-    }
-    @-webkit-keyframes slidein {
-        from {
-          left: 80%;
-          height: 200px;
-        }
-        to {
-          left: 0;
-          height: 145px;
-        }
-    }
-    @-moz-keyframes slidein {
-        from {
-          left: 80%;
-          height: 200px;
-        }
-        to {
-          left: 0;
-          height: 145px;
-        }
-    }
-      @-o-keyframes slidein {
-        from {
-          left: 80%;
-          height: 200px;
-        }
-        to {
-          left: 0;
-          height: 145
   </style>
+
+  
