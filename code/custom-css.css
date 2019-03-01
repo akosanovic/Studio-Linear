@@ -189,6 +189,8 @@
 .summary-title {
 	text-align:center;
 	font-family: 'franklin-gothic-urw';
+	font-weight: 400;
+	font-size: 23px !important;
 }
 .summary-item:hover .summary-title {
 	position: absolute;
