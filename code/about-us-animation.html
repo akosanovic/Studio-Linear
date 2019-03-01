@@ -1,91 +1,103 @@
-	<!-- AOS Animation library -->
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-	<style >
-		[data-aos=fade-left] {
-			transform: translate3d(1000px,0,0);
-		}
+
+<style >
+	[data-aos=fade-left] {
+		transform: translate3d(1000px,0,0);
+	}
+	.mobile-image {
+		display: none;
+	}
+	@media screen and (max-width: 640px){
 		.mobile-image {
+			display: block;
+		}
+		.aos-image,
+		.parallax-image {
 			display: none;
 		}
-		@media screen and (max-width: 640px){
-			.mobile-image {
-				display: block;
-			}
-			.aos-image,
-			.parallax-image {
-				display: none;
-			}
-		}
-		.aos-image_container {
-			position: relative;
-		}
-		.aos-image img, 
-		.parallax-image img{
-			display: block;
-			height: auto;
-			width: 100%;
-		}
-		.aos-image.static-image {
-			position: relative;
-			z-index:2;
-		}
-		.background{
-			position: absolute;
-			z-index: 1;
-			top    : 0;
-			bottom : 0;
-		}
-		/* fullwidth image */
-		.background img {
-			max-width: unset;
-			width: 150%;
-			position: relative;
-			left: -20%;
-			right: -20%;
-		}
-		.buildings {
-			position: absolute;
-			z-index: 2;
-			left  : 0;
-			top   : 0;
-			bottom: 0;
-		}
-		.brantches {
-			position: absolute;
-			z-index: 2;
-			right:   0;
-			top: 0;
-		}
-	</style>
+	}
+	.aos-image_container {
+		position: relative;
+	}
+	.aos-image img, 
+	.parallax-image img{
+		display: block;
+		height: auto;
+		width: 100%;
+	}
+	.aos-image.static-image {
+		position: relative;
+		z-index:2;
+	}
+	.static-image img {
+		position: relative;
+		max-width: unset;
+		left: -10%;
+		right: 0;
+		width: 120%;
+	}
+	.background{
+		position: absolute;
+		z-index: 1;
+		top    : 0;
+		bottom : 0;
+	}
+	/* fullwidth image */
+	.background img {
+		max-width: unset;
+		width: 150%;
+		position: relative;
+		right: 0;
+	}
+	.buildings {
+		position: absolute;
+		z-index: 2;
+		left  : 0;
+		top   : 0;
+		bottom: 0;
+		width: 100%;
+	}
+	.buildings img {
+		position: absolute;
+		left: -16%;
+		width: 115%;
+		max-width: unset;
+	}
+	.brantches {
+		position: absolute;
+		z-index: 2;
+		right:   0;
+		top: 0;
+		width: 100%;
+	}
+	.brantches img {
+		position: absolute;
+		right: -16%;
+	}
+</style>
 
 
-	<div class="aos-image_container">
-		<div class="aos-image static-image">
-			<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74c40dee6eb07a7f46962e/1551156768562/center-image.png?format=1500w" alt="">
-		</div>
-
-		<div data-aos="fade-left" class="aos-image background" data-aos-offset="500">
-			<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74cd14971a1874e8104da3/1551158553758/background.png?format=1500w" alt="">
-		</div>
-		
-		<div class="paralla-image parallax--img buildings">
-			<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74c4014e17b619cc5ba67c/1551156880223/buildings.png?format=1500w" alt="">
-		</div>
-
-		<div class="paralla-image parallax--img brantches">
-			<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74cb7c71c10ba578a8485e/1551158157827/branch.png?format=1500w" alt="">
-		</div>
-
-		<div class="mobile-image">
-			<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74cee44192029977b7be57/1551159032504/mobile-image.jpeg?format=1500w" alt="">
-		</div>
-		
+<div class="aos-image_container">
+	<div class="aos-image static-image">
+		<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74c40dee6eb07a7f46962e/1551156768562/center-image.png?format=1500w" alt="">
 	</div>
 
+	<div data-aos="fade-left" class="aos-image background" data-aos-offset="500">
+		<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c756487085229b900541c76/1551197522161/background1.png?format=1500w" alt="">
+	</div>
+	
+	<div class="parallax-image parallax--img buildings">
+		<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74c4014e17b619cc5ba67c/1551156880223/buildings.png?format=1500w" alt="">
+	</div>
 
+	<div class="parallax-image parallax--img brantches">
+		<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74cb7c71c10ba578a8485e/1551197783348/branch2.png?format=1500w" alt="">
+	</div>
 
-
-
+	<div class="mobile-image">
+		<img src="https://static1.squarespace.com/static/5b49379eb40b9d9bf07693a5/5c6de5a06e9a7f2801c2ba04/5c74cee44192029977b7be57/1551159032504/mobile-image.jpeg?format=1500w" alt="">
+	</div>
+	
+</div>
 
 
 <script>
@@ -110,11 +122,6 @@
 				}
 			}
 		}
-
-		AOS.init({
-			duration: 1500, 
-			once: false
-		});
 	})
 		
 </script>
