@@ -1,0 +1,42 @@
+<style>
+
+/*======= Our Work Section  =======*/
+
+/* Show title on hover */
+#our-work .slide{
+	position: relative;
+}
+#our-work .slide:hover .image-slide-title {
+	opacity: 1;
+	visibility: visible;
+	-webkit-transition: all 0.35s ease-out;
+				transition: all 0.35s ease-out;
+}
+#our-work .slide:hover img {
+	filter: alpha(opacity=15);
+	opacity: 0.15 !important;
+	transition: all 0.35s ease-out;
+}
+
+#our-work .slide .image-slide-title {
+	opacity: 0;
+	visibility: hidden;
+	-webkit-transition: all 0.35s ease-out;
+	transition: all 0.35s ease-out;
+
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+
+	display   : block;
+	width     : 100%;
+	margin-top: 0;
+	text-align: center;
+
+	color: black;
+	text-align : center;
+	font-family: 'Prata';
+	font-weight: 400;
+	font-size  : 23px !important;
+}
+</style>
